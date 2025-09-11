@@ -1,10 +1,11 @@
-import Image from "next/image";
-import { ConnectButton } from "@rainbow-me/rainbowkit"; 
+"use client"
+
+import  AirdropForm from "@/components/AirdropForm"
 
 export default function Home() {
   return (
     <div>
-      <ConnectButton />
+      <AirdropForm />
     </div>
   );
 }
