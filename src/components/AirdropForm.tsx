@@ -1,6 +1,6 @@
 "use client"
 import {InputForm} from "@/components/ui/InputField"
-import {useState} from "react"
+import {useState, useMemo} from "react"
 import {chainsToTSender, tsenderAbi, erc20Abi } from "@/constants"
 import {useChainId, useAccount} from "wagmi"
 import {readContract} from "@wagmi/core"
@@ -14,6 +14,7 @@ export default function AirdropForm() {
     const [amounts, setAmount] = useState("")
     const chainId = useChainId()
     const account = useAccount()
+    const total: number = useMemo(() => calculateTotal(amounts), [amounts])
 
     async function getApprovedAmount(tsenderAddress: string | null) : Promise<number> {
         if(!tsenderAddress) {
