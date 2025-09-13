@@ -3,6 +3,7 @@ import { testWithSynpress } from '@synthetixio/synpress'
 import { MetaMask, metaMaskFixtures } from '@synthetixio/synpress/playwright'
 import { anvil1Address, anvil2Address, mockTokenAddress, oneAmount } from '../test-constants'
 
+
 // Set up the test environment with Synpress and MetaMask fixtures, using the basic setup configuration
 const test = testWithSynpress(metaMaskFixtures(basicSetup))
 
